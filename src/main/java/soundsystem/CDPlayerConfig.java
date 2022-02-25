@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ImportResource;
 @Import({CDConfig.class})
 public class CDPlayerConfig {
     @Bean
-    public CDPlayer cdPlayer() {
-        return new CDPlayer();
+    public CDPlayer cdPlayer(CompactDisc compactDisc) {
+        return new CDPlayer(compactDisc);
     }
 }

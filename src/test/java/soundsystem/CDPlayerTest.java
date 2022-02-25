@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @date created in 2022-02-24 18:32
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {CDPlayerConfig.class})
+@ContextConfiguration(locations = {"classpath:root.xml"})
 public class CDPlayerTest {
     @Autowired
     private CDPlayer cdPlayer;
@@ -25,8 +25,8 @@ public class CDPlayerTest {
     public void test() {
         AnnotationConfigApplicationContext cont =
                 new AnnotationConfigApplicationContext(CDPlayerConfig.class);
-        //BlankDisc bean = cont.getBean(BlankDisc.class);
-        SgtPeppers bean1 = cont.getBean(SgtPeppers.class);
+        BlankDisc bean = cont.getBean(BlankDisc.class);
+       //SgtPeppers bean1 = cont.getBean(SgtPeppers.class);
     }
 
 }
